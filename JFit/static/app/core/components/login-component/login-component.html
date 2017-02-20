@@ -1,0 +1,40 @@
+<div bsModal #loginModal="bs-modal" [hidden]="true" class = "modal fade in" tabindex="-1"  role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" (click)="hideLoginModal()">
+                                <span aria-hidden="true">&times;</span>
+                        </button>
+                        <form id ="login-form" class="form-horizontal" (ngSubmit)="doLogin()" #loginForm="ngForm">
+                            <div class ="form-group" id="email-holder">
+                                <label class="col-sm-9">Login</label>
+                                <div class="col-sm-9">
+                                    <input [(ngModel)]="user.email" class="form-control" type="email" name="email"/>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-9">Password</label>
+                                <div class="col-sm-9">
+                                    <input [(ngModel)]="user.password" class="form-control" type="password" name="email"/>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary col-sm-9">Sign In</button>
+
+                        </form>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<div id="logged-info" class ="modal fade in" tabindex="-1" role="dialog" [style.display]="isAuthendicated?'block':'none'">
+    <div>
+        {{logged_info}}
+        <button class="btn" (click)="doLogout()">LogOut</button>
+    </div>
+</div>
+

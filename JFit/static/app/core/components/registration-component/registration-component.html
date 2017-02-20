@@ -1,0 +1,36 @@
+<div bsModal #registrationModal="bs-modal" [hidden]="true" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class = "modal-dialog modal-lg">
+        <div class="modal-content">
+              <div class="modal-body">
+                    <form class="form-horizontal" (submit)="doRegister()" #loginForm="ngForm">
+                        <div>
+                            <label> First Name</label>
+                            <input [(ngModel)]="user.FirstName" name="FirstName" type="text" class="form-control"/>
+
+                        </div>
+                        <div>
+                            <label>Second Name</label>
+                            <input [(ngModel)]="user.SecondName" name="SecondName" type="text" class="form-control"/>
+
+                        </div>
+                        <div>
+                            <label>email</label>
+                            <input [(ngModel)]="user.email" name="email" type="text" class="form-control"/>
+
+                        </div>
+                        <div>
+                            <label>Enter your password</label>
+                            <input [(ngModel)] = "user.password" name="passwordReg" class="form-control" type="password"/>
+                        </div>
+                        <div>
+                            <label>Confirm password</label>
+                            <input [(ngModel)] ="user.confirmPassword" name="confirmPass" class="form-control" type="password"/>
+
+                        </div>
+                        <div><button type="submit">Register</button></div>
+                    </form>
+                  <div><button (click)="registrationModalHide()">Close</button></div>
+              </div>
+        </div>
+    </div>
+</div>
